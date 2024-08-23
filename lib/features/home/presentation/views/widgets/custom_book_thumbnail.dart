@@ -17,7 +17,6 @@ class CustomBookThumbnail extends StatelessWidget {
       aspectRatio: aspectRatio,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.yellow,
           borderRadius: BorderRadius.circular(borderRadius),
           image: DecorationImage(
             image: NetworkImage(thumbnail),
