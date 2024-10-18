@@ -1,11 +1,12 @@
+import 'package:bookly_app/features/book_details/presentation/book_details_view.dart';
 import 'package:bookly_app/features/home/presentation/home_view.dart';
 
-class AppRouter{
+class AppRouter {
   static String kHomeView = "/homeView";
-  static String kBestSellerView = "/bestSellerView";
+  static String kBookDetails = "/bookDetails";
 
-  static Map<String,dynamic> router = {
+  static Map<String, dynamic> router = {
     kHomeView: const HomeView(),
-    kBestSellerView: const HomeView(),
+    kBookDetails: const BookDetailsView(),
   };
 }
