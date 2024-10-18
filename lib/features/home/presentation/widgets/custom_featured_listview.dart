@@ -1,14 +1,13 @@
 import 'package:bookly_app/features/home/presentation/widgets/custom_book_thumbnail.dart';
 import 'package:flutter/material.dart';
 
-
 class CustomFeaturedListView extends StatelessWidget {
-  const CustomFeaturedListView({super.key});
-
+  const CustomFeaturedListView({super.key, this.scale = 1});
+  final double scale;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.27,
+      height: MediaQuery.of(context).size.height * 0.27 * scale,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemBuilder: ((context, index) {

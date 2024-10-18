@@ -1,6 +1,5 @@
 import 'package:bookly_app/core/app_router/router.dart';
 import 'package:bookly_app/core/utils/functions.dart';
-import 'package:bookly_app/features/book_details/presentation/book_details_view.dart';
 import 'package:flutter/material.dart';
 
 import 'best_seller_item_details.dart';

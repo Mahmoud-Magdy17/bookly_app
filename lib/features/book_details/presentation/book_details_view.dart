@@ -1,6 +1,7 @@
+import 'package:bookly_app/features/book_details/presentation/widgets/book_details_app_bar.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets/best_seller_view_body.dart';
+import 'widgets/book_details_view_body.dart';
 
 class BookDetailsView extends StatelessWidget {
   const BookDetailsView({super.key});
@@ -8,7 +9,12 @@ class BookDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: BookDetailsViewBody(),
+      appBar: BookDetailsAppBar(),
+      body: Column(
+        children: [
+          BookDetailsViewBody(),
+        ],
+      ),
     );
   }
 }
