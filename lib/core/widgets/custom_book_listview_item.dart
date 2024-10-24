@@ -2,11 +2,11 @@ import 'package:bookly_app/core/app_router/router.dart';
 import 'package:bookly_app/core/utils/functions.dart';
 import 'package:flutter/material.dart';
 
-import 'best_seller_item_details.dart';
-import 'custom_book_thumbnail.dart';
+import '../../features/home/presentation/widgets/best_seller_item_details.dart';
+import '../../features/home/presentation/widgets/custom_book_thumbnail.dart';
 
-class CustomBestSellerListViewItem extends StatelessWidget {
-  const CustomBestSellerListViewItem({super.key});
+class CustomBookListViewItem extends StatelessWidget {
+  const CustomBookListViewItem({super.key});
   final String thumbnail =
       'https://books.google.com/books/content?id=hmFHAAAAYAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api';
   @override

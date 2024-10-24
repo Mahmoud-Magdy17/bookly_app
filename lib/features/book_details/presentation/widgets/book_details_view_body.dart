@@ -13,66 +13,64 @@ class BookDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 230,
-              child: CustomFeaturedListItem(),
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 210,
+            child: CustomFeaturedListItem(),
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+          Text(
+            "The Jungle Book",
+            style: Styles.textStyyle30.copyWith(
+              fontWeight: FontWeight.bold,
             ),
-            const SizedBox(
-              height: 35,
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          Opacity(
+            opacity: 0.7,
+            child: Text(
+              "Rudyard Kipling",
+              style: Styles.textStyle18.copyWith(),
             ),
-            Text(
-              "The Jungle Book",
-              style: Styles.textStyyle30.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          const BookRating(
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
+          const SizedBox(
+            height: 36,
+          ),
+          const BookDetailsButton(),
+          const Padding(
+            padding: EdgeInsets.only(
+              top: 32.0,
+              bottom: 18.0,
+              left: 20,
+              right: 20,
             ),
-            const SizedBox(
-              height: 8,
+            child: Row(
+              children: [
+                Text(
+                  "Best Seller",
+                  style: Styles.textStyle18,
+                ),
+              ],
             ),
-            Opacity(
-              opacity: 0.7,
-              child: Text(
-                "Rudyard Kipling",
-                style: Styles.textStyle18.copyWith(),
-              ),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: CustomFeaturedListView(
+              scale: 0.8,
             ),
-            const SizedBox(
-              height: 16,
-            ),
-            const BookRating(
-              mainAxisAlignment: MainAxisAlignment.center,
-            ),
-            const SizedBox(
-              height: 46,
-            ),
-            const BookDetailsButton(),
-            const Padding(
-              padding: EdgeInsets.only(
-                top: 40.0,
-                bottom: 22.0,
-                left: 20,
-                right: 20,
-              ),
-              child: Row(
-                children: [
-                  Text(
-                    "Best Seller",
-                    style: Styles.textStyle18,
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: const CustomFeaturedListView(
-                scale: 0.8,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

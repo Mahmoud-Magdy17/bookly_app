@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class BookDetailsAppBar extends StatelessWidget implements PreferredSizeWidget{
+class BookDetailsAppBar extends StatelessWidget implements PreferredSizeWidget {
   const BookDetailsAppBar({super.key});
 
   @override
@@ -8,7 +8,9 @@ class BookDetailsAppBar extends StatelessWidget implements PreferredSizeWidget{
     return AppBar(
       backgroundColor: Colors.transparent,
       leading: IconButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pop(context);
+        },
         icon: const Icon(
           Icons.close,
           size: 25,
@@ -24,7 +26,7 @@ class BookDetailsAppBar extends StatelessWidget implements PreferredSizeWidget{
       ],
     );
   }
-  
+
   @override
   // TODO: implement preferredSize
   Size get preferredSize => const Size.fromHeight(60);
