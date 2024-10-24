@@ -20,7 +20,7 @@ class SearchViewBody extends StatelessWidget {
           Padding(
             padding:
                 EdgeInsets.only(top: 8.0, bottom: 22.0, ),
-            child: Text("Best Seller", style: Styles.textStyle18),
+            child: Text("Search Result", style: Styles.textStyle18),
           ),
           Expanded(
             child: SearchListView(),

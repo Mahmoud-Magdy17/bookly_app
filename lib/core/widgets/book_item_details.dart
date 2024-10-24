@@ -1,12 +1,11 @@
-
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-import 'book_rating.dart';
+import '../../features/home/presentation/widgets/book_rating.dart';
 
-class BestSellerItemDetails extends StatelessWidget {
-  const BestSellerItemDetails({
+class BookItemDetails extends StatelessWidget {
+  const BookItemDetails({
     super.key,
   });
 
@@ -31,6 +30,7 @@ class BestSellerItemDetails extends StatelessWidget {
             'J.K. Rowling',
             style: Styles.textStyle14,
           ),
+          const Spacer(),
           Row(
             children: [
               Text(

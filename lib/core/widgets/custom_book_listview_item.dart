@@ -1,8 +1,8 @@
 import 'package:bookly_app/core/app_router/router.dart';
 import 'package:bookly_app/core/utils/functions.dart';
+import 'package:bookly_app/core/widgets/book_item_details.dart';
 import 'package:flutter/material.dart';
 
-import '../../features/home/presentation/widgets/best_seller_item_details.dart';
 import '../../features/home/presentation/widgets/custom_book_thumbnail.dart';
 
 class CustomBookListViewItem extends StatelessWidget {
@@ -15,7 +15,6 @@ class CustomBookListViewItem extends StatelessWidget {
       padding: const EdgeInsets.only(right: 10.0),
       child: GestureDetector(
         onTap: () {
-          
           navigatorPush(context: context, viewId: AppRouter.kBookDetails);
         },
         child: SizedBox(
@@ -28,7 +27,7 @@ class CustomBookListViewItem extends StatelessWidget {
                 borderRadius: 8,
               ),
               const SizedBox(width: 30),
-              const BestSellerItemDetails()
+              const BookItemDetails()
             ],
           ),
         ),

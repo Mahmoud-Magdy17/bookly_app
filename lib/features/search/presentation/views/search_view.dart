@@ -9,6 +9,8 @@ class SearchView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        elevation: 0,
+        shadowColor: Colors.transparent,
       ),
       body: const SafeArea(child: SearchViewBody()),
     );

@@ -1,7 +1,7 @@
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-import 'best_seller_listview.dart';
+import '../../../../core/widgets/books_listview_with_details.dart';
 import 'custom_featured_listview.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -31,7 +31,7 @@ class HomeViewBody extends StatelessWidget {
             child: 
             Padding(
               padding: EdgeInsets.symmetric(horizontal:  20.0),
-              child: BestSellerListView(),
+              child: BooksListViewWithDetails(),
             ),
           ),
         ],
