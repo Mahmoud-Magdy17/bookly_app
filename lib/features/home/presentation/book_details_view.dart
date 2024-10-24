@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/book_details/presentation/widgets/book_details_app_bar.dart';
+import 'package:bookly_app/features/home/presentation/widgets/book_details_app_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/book_details_view_body.dart';

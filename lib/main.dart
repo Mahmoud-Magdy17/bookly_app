@@ -18,7 +18,8 @@ class BooklyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const SplashView(),
       theme: ThemeData.dark().copyWith(
-        textTheme: GoogleFonts.montserratAlternatesTextTheme(ThemeData.dark().textTheme),
+        textTheme: GoogleFonts.montserratAlternatesTextTheme(
+            ThemeData.dark().textTheme),
         scaffoldBackgroundColor: kPrimaryColor,
       ),
     );

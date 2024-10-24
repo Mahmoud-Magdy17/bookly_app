@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'custom_book_listview_item.dart';
@@ -8,8 +7,7 @@ class BooksListViewWithDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return 
-    ListView.separated(
+    return ListView.separated(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.all(0),

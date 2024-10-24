@@ -18,8 +18,10 @@ class SearchViewBody extends StatelessWidget {
         children: [
           CustomSearchFormField(),
           Padding(
-            padding:
-                EdgeInsets.only(top: 8.0, bottom: 22.0, ),
+            padding: EdgeInsets.only(
+              top: 8.0,
+              bottom: 22.0,
+            ),
             child: Text("Search Result", style: Styles.textStyle18),
           ),
           Expanded(

@@ -4,7 +4,7 @@ import 'package:bookly_app/features/home/presentation/widgets/custom_featured_li
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../../home/presentation/widgets/custom_featured_listview.dart';
+import 'custom_featured_listview.dart';
 import 'book_details_button.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
