@@ -33,7 +33,7 @@ class BooklyApp extends StatelessWidget {
           create: (context) {
             return FeaturedBooksCubit(
               getIt.get<HomeRepoImpl>(),
-            );
+            )..fetchFeaturedBooks();
           },
         ),
       ],

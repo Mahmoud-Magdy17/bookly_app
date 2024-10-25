@@ -31,15 +31,14 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failture, List<BookModel>>> fetchFeaturedBooks() async{
-    String endPoint =
-        "volumes?Filtering=free-ebooks&q=subject:programming";
+  Future<Either<Failture, List<BookModel>>> fetchFeaturedBooks() async {
+    String endPoint = "volumes?Filtering=free-ebooks&q=subject:programming";
 
     try {
       var jSonData = await apiServices.get(endPoint);
       List<BookModel> books = [];
       for (var book in jSonData["items"]) {
-        books.add(book);
+        books.add(BookModel.fromJson(book));
       }
       return right(books);
     } catch (e) {
