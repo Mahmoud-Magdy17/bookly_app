@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/home/data/models/book_model/book_rating.dart';
 import 'package:equatable/equatable.dart';
 
 import 'image_links.dart';
@@ -6,8 +7,9 @@ import 'panelization_summary.dart';
 import 'reading_modes.dart';
 
 class VolumeInfo extends Equatable {
-  final String? title;
-  final List<String>? authors;
+  final BookRatingModel bookRating;
+  final String title;
+  final List<String> authors;
   final String? publishedDate;
   final String? description;
   final List<IndustryIdentifier>? industryIdentifiers;
@@ -26,8 +28,9 @@ class VolumeInfo extends Equatable {
   final String? canonicalVolumeLink;
 
   const VolumeInfo({
-    this.title,
-    this.authors,
+    required this.title,
+    required this.authors,
+    required this.bookRating,
     this.publishedDate,
     this.description,
     this.industryIdentifiers,
@@ -47,8 +50,11 @@ class VolumeInfo extends Equatable {
   });
 
   factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
-        title: json['title'] as String?,
-        authors: (json['authors'] as List<dynamic>?)?.cast<String>(),
+        title: json['title'] as String,
+        bookRating: BookRatingModel(
+            averageRating: json['averageRating' ]as int?,
+            retingCount: json['ratingsCount'] as int?),
+        authors: (json['authors'] as List<dynamic>).cast<String>(),
         publishedDate: json['publishedDate'] as String?,
         description: json['description'] as String?,
         industryIdentifiers: (json['industryIdentifiers'] as List<dynamic>?)
@@ -68,7 +74,8 @@ class VolumeInfo extends Equatable {
             ? null
             : PanelizationSummary.fromJson(
                 json['panelizationSummary'] as Map<String, dynamic>),
-        imageLinks: ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
+        imageLinks:
+            ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
         language: json['language'] as String?,
         previewLink: json['previewLink'] as String?,
         infoLink: json['infoLink'] as String?,

@@ -1,12 +1,14 @@
 import 'package:bookly_app/core/app_router/router.dart';
 import 'package:bookly_app/core/utils/functions.dart';
 import 'package:bookly_app/core/widgets/book_item_details.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../features/home/presentation/views/widgets/custom_book_thumbnail.dart';
 
 class CustomBookListViewItem extends StatelessWidget {
-  const CustomBookListViewItem({super.key});
+  const CustomBookListViewItem({super.key, required this.book});
+  final BookModel book;
   final String thumbnail =
       'https://books.google.com/books/content?id=hmFHAAAAYAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api';
   @override
@@ -22,12 +24,14 @@ class CustomBookListViewItem extends StatelessWidget {
           child: Row(
             children: [
               CustomBookThumbnail(
-                thumbnail: thumbnail,
+                thumbnail: book.volumeInfo.imageLinks.thumbnail,
                 aspectRatio: 2 / 3,
                 borderRadius: 8,
               ),
               const SizedBox(width: 30),
-              const BookItemDetails()
+              BookItemDetails(
+                bookInfo: book.volumeInfo,
+              )
             ],
           ),
         ),

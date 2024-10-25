@@ -1,5 +1,6 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/data/models/book_model/volume_info.dart';
 import 'package:flutter/material.dart';
 
 import '../../features/home/presentation/views/widgets/book_rating.dart';
@@ -7,8 +8,9 @@ import '../../features/home/presentation/views/widgets/book_rating.dart';
 class BookItemDetails extends StatelessWidget {
   const BookItemDetails({
     super.key,
+    required this.bookInfo,
   });
-
+  final VolumeInfo bookInfo;
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -20,27 +22,29 @@ class BookItemDetails extends StatelessWidget {
             child: Text(
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              'Harry Potter and the Goblet of Fire',
+              bookInfo.title,
               style: Styles.textStyyle20.copyWith(
                 fontFamily: kEleanoreFont,
               ),
             ),
           ),
-          const Text(
-            'J.K. Rowling',
+          Text(
+            bookInfo.authors[0],
             style: Styles.textStyle14,
           ),
           const Spacer(),
           Row(
             children: [
               Text(
-                '19.99 €',
+                'free',
                 style: Styles.textStyyle20.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const Spacer(),
-              const BookRating(),
+              BookRating(
+                bookRating: bookInfo.bookRating,
+              ),
             ],
           ),
         ],
