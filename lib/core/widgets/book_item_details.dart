@@ -2,7 +2,7 @@ import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-import '../../features/home/presentation/widgets/book_rating.dart';
+import '../../features/home/presentation/views/widgets/book_rating.dart';
 
 class BookItemDetails extends StatelessWidget {
   const BookItemDetails({

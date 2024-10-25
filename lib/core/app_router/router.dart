@@ -1,5 +1,5 @@
-import 'package:bookly_app/features/home/presentation/book_details_view.dart';
-import 'package:bookly_app/features/home/presentation/home_view.dart';
+import 'package:bookly_app/features/home/presentation/views/book_details_view.dart';
+import 'package:bookly_app/features/home/presentation/views/home_view.dart';
 import 'package:bookly_app/features/search/presentation/views/search_view.dart';
 
 class AppRouter {
