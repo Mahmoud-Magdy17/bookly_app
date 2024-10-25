@@ -12,31 +12,30 @@ class CustomFeaturedListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
       builder: (context, state) {
-        if (state is FeaturedBooksLoading) {
-          return const CustomProgressIndicator();
+        if (state is FeaturedBooksSuccess) {
+          return SizedBox(
+            height: MediaQuery.of(context).size.height * 0.27 * scale,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: ((context, index) {
+                return CustomBookThumbnail(
+                  thumbnail: state.books[index].volumeInfo.imageLinks.thumbnail,
+                  aspectRatio: 2.6 / 4,
+                  borderRadius: 16,
+                );
+              }),
+              separatorBuilder: (context, index) {
+                return const SizedBox(
+                  width: 8,
+                );
+              },
+              itemCount: 5,
+            ),
+          );
         } else if (state is FeaturedBooksFailture) {
           return CustomErrorMessage(errorMsg: state.error);
         }
-        return SizedBox(
-          height: MediaQuery.of(context).size.height * 0.27 * scale,
-          child: ListView.separated(
-            scrollDirection: Axis.horizontal,
-            itemBuilder: ((context, index) {
-              return const CustomBookThumbnail(
-                thumbnail:
-                    'http://books.google.com/books/content?id=2bCdaZ7KvDsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
-                aspectRatio: 2.6 / 4,
-                borderRadius: 16,
-              );
-            }),
-            separatorBuilder: (context, index) {
-              return const SizedBox(
-                width: 8,
-              );
-            },
-            itemCount: 5,
-          ),
-        );
+        return const CustomProgressIndicator();
       },
     );
   }
