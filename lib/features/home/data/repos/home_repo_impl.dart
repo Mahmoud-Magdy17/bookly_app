@@ -8,7 +8,8 @@ import 'package:dio/dio.dart';
 class HomeRepoImpl implements HomeRepo {
   @override
   Future<Either<Failture, List<BookModel>>> fetchNewestBooks() async {
-    String endPoint = "volumes?Filtering=free-ebooks&q=subject:programming&sorting=newest";
+    String endPoint =
+        "volumes?Filtering=free-ebooks&q=subject:programming&sorting=newest";
 
     try {
       var jSonData = await ApiServices(Dio()).get(endPoint);
@@ -18,7 +19,11 @@ class HomeRepoImpl implements HomeRepo {
       }
       return right(books);
     } catch (e) {
-      return left(ServerFailture());
+      if (e is DioException) {
+        return left(ServerFailture.fromDioException(e));
+      } else {
+        return left(ServerFailture(e.toString()));
+      }
     }
   }
 
