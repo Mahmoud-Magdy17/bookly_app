@@ -1,5 +1,6 @@
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_rating.dart';
+import 'package:bookly_app/features/home/data/models/book_model/volume_info.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_featured_list_item.dart';
 import 'package:flutter/material.dart';
@@ -9,8 +10,8 @@ import 'custom_featured_listview.dart';
 import 'book_details_button.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
-
+  const BookDetailsViewBody({super.key, required this.bookDetails});
+  final VolumeInfo bookDetails;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -45,7 +46,7 @@ class BookDetailsViewBody extends StatelessWidget {
           BookRating(
             mainAxisAlignment: MainAxisAlignment.center,
             bookRating: BookRatingModel(
-              averageRating:4,
+              averageRating: 4,
               retingCount: 2,
             ),
           ),
@@ -63,7 +64,7 @@ class BookDetailsViewBody extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  "Best Seller",
+                  "Featured Books",
                   style: Styles.textStyle18,
                 ),
               ],

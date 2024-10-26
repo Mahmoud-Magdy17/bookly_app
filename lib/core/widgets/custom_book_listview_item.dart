@@ -17,7 +17,10 @@ class CustomBookListViewItem extends StatelessWidget {
       padding: const EdgeInsets.only(right: 10.0),
       child: GestureDetector(
         onTap: () {
-          navigatorPush(context: context, viewId: AppRouter.kBookDetails);
+          navigatorPush(
+            context: context,
+            viewId: AppRouter.kBookDetails,
+          );
         },
         child: SizedBox(
           height: 130,
