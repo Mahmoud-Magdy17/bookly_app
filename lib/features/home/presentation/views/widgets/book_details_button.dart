@@ -18,9 +18,9 @@ class BookDetailsButton extends StatelessWidget {
           Expanded(
             child: Container(
               alignment: Alignment.center,
-              decoration: BoxDecoration(color: Colors.white),
+              decoration: const BoxDecoration(color: Colors.white),
               child: Text(
-                "19.99€",
+                "FREE",
                 style: Styles.textStyle16.copyWith(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,

@@ -1,3 +1,5 @@
+import 'package:bookly_app/core/app_router/router.dart';
+import 'package:bookly_app/core/utils/functions.dart';
 import 'package:bookly_app/core/widgets/custom_error_message.dart';
 import 'package:bookly_app/core/widgets/custom_progress_indecator.dart';
 import 'package:bookly_app/features/home/presentation/manger/featured_books_cubit/featured_books_cubit.dart';
@@ -18,10 +20,20 @@ class CustomFeaturedListView extends StatelessWidget {
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemBuilder: ((context, index) {
-                return CustomBookThumbnail(
-                  thumbnail: state.books[index].volumeInfo.imageLinks.thumbnail,
-                  aspectRatio: 2.6 / 4,
-                  borderRadius: 16,
+                return InkWell(
+                  onTap: () {
+                    navigatorPush(
+                      context: context,
+                      viewId: AppRouter.kBookDetails,
+                      arg: state.books[index],
+                    );
+                  },
+                  child: CustomBookThumbnail(
+                    thumbnail:
+                        state.books[index].volumeInfo.imageLinks.thumbnail,
+                    aspectRatio: 2.6 / 4,
+                    borderRadius: 16,
+                  ),
                 );
               }),
               separatorBuilder: (context, index) {
@@ -29,7 +41,7 @@ class CustomFeaturedListView extends StatelessWidget {
                   width: 8,
                 );
               },
-              itemCount: 5,
+              itemCount: state.books.length,
             ),
           );
         } else if (state is FeaturedBooksFailture) {

@@ -1,5 +1,5 @@
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_rating.dart';
-import 'package:bookly_app/features/home/data/models/book_model/image_links.dart';
 import 'package:bookly_app/features/home/data/models/book_model/volume_info.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_details_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -11,18 +11,19 @@ class BookDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    final BookModel arg =
+        ModalRoute.of(context)?.settings.arguments as BookModel;
+    return Scaffold(
       appBar: const BookDetailsAppBar(),
       body: Column(
         children: [
           BookDetailsViewBody(
-            bookDetails: VolumeInfo(
-                title: 'fe',
-                authors: [],
-                bookRating: BookRatingModel(averageRating: 3, retingCount: 2),
-                imageLinks: ImageLinks(
-                    smallThumbnail: 'smallThumbnail', thumbnail: 'thumbnail')),
-          ),
+              bookDetails: VolumeInfo(
+            title: arg.volumeInfo.title,
+            authors: arg.volumeInfo.authors,
+            bookRating: BookRatingModel(averageRating: 3, retingCount: 2),
+            imageLinks: arg.volumeInfo.imageLinks,
+          )),
         ],
       ),
     );

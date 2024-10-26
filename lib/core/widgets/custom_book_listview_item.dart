@@ -20,6 +20,7 @@ class CustomBookListViewItem extends StatelessWidget {
           navigatorPush(
             context: context,
             viewId: AppRouter.kBookDetails,
+            arg: book,
           );
         },
         child: SizedBox(

@@ -18,7 +18,7 @@ class CustomBookThumbnail extends StatelessWidget {
       aspectRatio: aspectRatio,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16),
-        child: CachedNetworkImage(imageUrl: thumbnail),
+        child: CachedNetworkImage(imageUrl: thumbnail,fit: BoxFit.fill,),
       ),
 
       // Container(

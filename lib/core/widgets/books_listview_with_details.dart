@@ -18,7 +18,7 @@ class BooksListViewWithDetails extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             padding: const EdgeInsets.all(0),
-            itemCount: 5,
+            itemCount: state.books.length,
             itemBuilder: (context, index) {
               return CustomBookListViewItem(
                 book: state.books[index],

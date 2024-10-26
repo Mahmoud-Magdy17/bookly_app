@@ -17,15 +17,20 @@ class BookDetailsViewBody extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          const SizedBox(
-            height: 210,
-            child: CustomFeaturedListItem(),
+          SizedBox(
+            height: 225,
+            child: CustomFeaturedListItem(
+              thumbnail: bookDetails.imageLinks.thumbnail,
+            ),
           ),
           const SizedBox(
             height: 25,
           ),
           Text(
-            "The Jungle Book",
+            bookDetails.title,
+            textAlign: TextAlign.center,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
             style: Styles.textStyyle30.copyWith(
               fontWeight: FontWeight.bold,
             ),
@@ -36,7 +41,7 @@ class BookDetailsViewBody extends StatelessWidget {
           Opacity(
             opacity: 0.7,
             child: Text(
-              "Rudyard Kipling",
+              bookDetails.authors[0],
               style: Styles.textStyle18.copyWith(),
             ),
           ),
@@ -46,8 +51,8 @@ class BookDetailsViewBody extends StatelessWidget {
           BookRating(
             mainAxisAlignment: MainAxisAlignment.center,
             bookRating: BookRatingModel(
-              averageRating: 4,
-              retingCount: 2,
+              averageRating: bookDetails.bookRating.averageRating,
+              retingCount: bookDetails.bookRating.retingCount,
             ),
           ),
           const SizedBox(
