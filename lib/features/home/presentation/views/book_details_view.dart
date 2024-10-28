@@ -15,17 +15,13 @@ class BookDetailsView extends StatelessWidget {
         ModalRoute.of(context)?.settings.arguments as BookModel;
     return Scaffold(
       appBar: const BookDetailsAppBar(),
-      body: Column(
-        children: [
-          BookDetailsViewBody(
-              bookDetails: VolumeInfo(
-            title: arg.volumeInfo.title,
-            authors: arg.volumeInfo.authors,
-            bookRating: BookRatingModel(averageRating: 3, retingCount: 2),
-            imageLinks: arg.volumeInfo.imageLinks,
-          )),
-        ],
-      ),
+      body: BookDetailsViewBody(
+          bookDetails: VolumeInfo(
+        title: arg.volumeInfo.title,
+        authors: arg.volumeInfo.authors,
+        bookRating: BookRatingModel(averageRating: 3, retingCount: 2),
+        imageLinks: arg.volumeInfo.imageLinks,
+      )),
     );
   }
 }

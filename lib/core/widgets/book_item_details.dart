@@ -29,7 +29,7 @@ class BookItemDetails extends StatelessWidget {
             ),
           ),
           Text(
-            bookInfo.authors[0],
+            bookInfo.authors?[0]??"Auther",
             style: Styles.textStyle14,
           ),
           const Spacer(),

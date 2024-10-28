@@ -1,6 +1,5 @@
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class BookDetailsButton extends StatelessWidget {
   const BookDetailsButton({super.key});
@@ -31,7 +30,7 @@ class BookDetailsButton extends StatelessWidget {
           Expanded(
             child: Container(
               alignment: Alignment.center,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xffef8262),
               ),
               child: Text(

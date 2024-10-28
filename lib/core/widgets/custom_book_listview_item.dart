@@ -9,7 +9,7 @@ import '../../features/home/presentation/views/widgets/custom_book_thumbnail.dar
 class CustomBookListViewItem extends StatelessWidget {
   const CustomBookListViewItem({super.key, required this.book});
   final BookModel book;
-  final String thumbnail =
+  final String defaultThumbnail =
       'https://books.google.com/books/content?id=hmFHAAAAYAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api';
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class CustomBookListViewItem extends StatelessWidget {
           child: Row(
             children: [
               CustomBookThumbnail(
-                thumbnail: book.volumeInfo.imageLinks.thumbnail,
+                thumbnail: book.volumeInfo.imageLinks?.thumbnail??defaultThumbnail,
                 aspectRatio: 2 / 3,
                 borderRadius: 8,
               ),

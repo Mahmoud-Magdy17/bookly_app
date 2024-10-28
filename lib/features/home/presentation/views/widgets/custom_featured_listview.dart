@@ -29,8 +29,9 @@ class CustomFeaturedListView extends StatelessWidget {
                     );
                   },
                   child: CustomBookThumbnail(
-                    thumbnail:
-                        state.books[index].volumeInfo.imageLinks.thumbnail,
+                    thumbnail: state
+                            .books[index].volumeInfo.imageLinks?.thumbnail ??
+                        'https://th.bing.com/th/id/OIP.6l9iAf-vEbXm5d1_LIFGJAHaHa?rs=1&pid=ImgDetMain',
                     aspectRatio: 2.6 / 4,
                     borderRadius: 16,
                   ),
