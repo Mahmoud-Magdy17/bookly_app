@@ -25,7 +25,9 @@ class SearchViewBody extends StatelessWidget {
             child: Text("Search Result", style: Styles.textStyle18),
           ),
           Expanded(
-            child: SearchListView(),
+            child: SearchListView(
+              books: [],
+            ),
           ),
         ],
       ),

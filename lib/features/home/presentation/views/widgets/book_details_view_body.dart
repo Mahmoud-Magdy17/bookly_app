@@ -65,7 +65,7 @@ class BookDetailsViewBody extends StatelessWidget {
             const SizedBox(
               height: 36,
             ),
-            const BookDetailsButton(),
+             BookDetailsButton(url: bookDetails.previewLink,),
             const Padding(
               padding: EdgeInsets.only(
                 top: 32.0,
