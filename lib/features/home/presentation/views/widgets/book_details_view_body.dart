@@ -7,8 +7,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'custom_featured_listview.dart';
 import 'book_details_button.dart';
+import 'custom_related_listview.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key, required this.bookDetails});
@@ -34,7 +34,7 @@ class BookDetailsViewBody extends StatelessWidget {
               height: 25,
             ),
             Text(
-              bookDetails.title,
+              bookDetails.title!,
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
@@ -78,7 +78,7 @@ class BookDetailsViewBody extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      "Featured Books",
+                      "Related Books",
                       style: Styles.textStyle18,
                     ),
                   ],
@@ -87,7 +87,7 @@ class BookDetailsViewBody extends StatelessWidget {
             ),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: CustomFeaturedListView(
+              child: CustomRelatedListView(
                 scale: 0.8,
               ),
             ),

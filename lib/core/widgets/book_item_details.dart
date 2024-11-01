@@ -22,7 +22,7 @@ class BookItemDetails extends StatelessWidget {
             child: Text(
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              bookInfo.title,
+              bookInfo.title!,
               style: Styles.textStyyle20.copyWith(
                 fontFamily: kEleanoreFont,
               ),

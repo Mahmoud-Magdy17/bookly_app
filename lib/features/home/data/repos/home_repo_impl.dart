@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bookly_app/core/errors/failture.dart';
 import 'package:bookly_app/core/utils/api_services.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
@@ -34,9 +36,34 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failture, List<BookModel>>> fetchFeaturedBooks() async {
     String endPoint =
         "volumes?Filtering=free-ebooks&q=subject:computer science";
-
     try {
       var jSonData = await apiServices.get(endPoint);
+    log("message32");
+      List<BookModel> books = [];
+      for (var book in jSonData["items"]) {
+        try {
+          books.add(BookModel.fromJson(book));
+        } catch (e) {
+          books.add(BookModel.fromJson(book));
+        }
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailture.fromDioException(e));
+      } else {
+        return left(ServerFailture(e.toString()));
+      }
+    }
+  }
+
+  @override
+  Future<Either<Failture, List<BookModel>>> fetchRelatedBooks(String bookName) async {
+    String endPoint =
+        "volumes?Filtering=free-ebooks&q=$bookName&sorting=relevance";
+    try {
+      var jSonData = await apiServices.get(endPoint);
+    log("message32");
       List<BookModel> books = [];
       for (var book in jSonData["items"]) {
         try {

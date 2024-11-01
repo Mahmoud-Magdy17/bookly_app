@@ -8,7 +8,7 @@ import 'reading_modes.dart';
 
 class VolumeInfo extends Equatable {
   final BookRatingModel bookRating;
-  final String title;
+  final String? title;
   final List<String>? authors;
   final String? publishedDate;
   final String? description;
@@ -50,11 +50,14 @@ class VolumeInfo extends Equatable {
   });
 
   factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
-        title: json['title'] as String,
+        title:
+            json['title'] == null ? "Non Named Book" : json['title'] as String,
         bookRating: BookRatingModel(
             averageRating: json['averageRating'] as int?,
             retingCount: json['ratingsCount'] as int?),
-        authors: json['authors']==null?null: (json['authors'] as List<dynamic>).cast<String>(),
+        authors: json['authors'] == null
+            ? null
+            : (json['authors'] as List<dynamic>).cast<String>(),
         publishedDate: json['publishedDate'] as String?,
         description: json['description'] as String?,
         industryIdentifiers: (json['industryIdentifiers'] as List<dynamic>?)

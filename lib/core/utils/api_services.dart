@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:dio/dio.dart';
 
@@ -11,7 +10,7 @@ class ApiServices {
 
   Future<Map<String, dynamic>> get(String endPoint) async {
     Response response = await dio.get("$_baseUrl$endPoint");
-    log(response.data.toString());
+
     return response.data;
   }
 }
