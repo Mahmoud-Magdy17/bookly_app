@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bookly_app/core/errors/failture.dart';
 import 'package:bookly_app/core/utils/api_services.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
@@ -38,7 +36,6 @@ class HomeRepoImpl implements HomeRepo {
         "volumes?Filtering=free-ebooks&q=subject:computer science";
     try {
       var jSonData = await apiServices.get(endPoint);
-    log("message32");
       List<BookModel> books = [];
       for (var book in jSonData["items"]) {
         try {
@@ -58,12 +55,12 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failture, List<BookModel>>> fetchRelatedBooks(String bookName) async {
+  Future<Either<Failture, List<BookModel>>> fetchRelatedBooks(
+      String bookName) async {
     String endPoint =
         "volumes?Filtering=free-ebooks&q=$bookName&sorting=relevance";
     try {
       var jSonData = await apiServices.get(endPoint);
-    log("message32");
       List<BookModel> books = [];
       for (var book in jSonData["items"]) {
         try {

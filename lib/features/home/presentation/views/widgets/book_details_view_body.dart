@@ -17,9 +17,8 @@ class BookDetailsViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal:  25.0),
+        padding: const EdgeInsets.symmetric(horizontal: 25.0),
         child: ListView(
-          
           children: [
             Center(
               child: SizedBox(
@@ -48,7 +47,7 @@ class BookDetailsViewBody extends StatelessWidget {
             Opacity(
               opacity: 0.7,
               child: Text(
-                bookDetails.authors?[0]??'Auther',
+                bookDetails.authors?[0] ?? 'Auther',
                 style: Styles.textStyle18.copyWith(),
               ),
             ),
@@ -65,7 +64,9 @@ class BookDetailsViewBody extends StatelessWidget {
             const SizedBox(
               height: 36,
             ),
-             BookDetailsButton(url: bookDetails.previewLink,),
+            BookDetailsButton(
+              url: bookDetails.previewLink ?? 'hihi',
+            ),
             const Padding(
               padding: EdgeInsets.only(
                 top: 32.0,

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
@@ -20,7 +18,6 @@ class RelatedBooksCubit extends Cubit<RelatedBooksState> {
         emit(RelatedBooksFailture(dioError: failture.dioError));
       },
       (books) {
-        log(books.toString());
         emit(RelatedBooksSuccess(books: books));
       },
     );

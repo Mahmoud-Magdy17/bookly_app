@@ -1,36 +1,15 @@
-import 'package:bookly_app/constants.dart';
+import 'package:bookly_app/core/utils/functions.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsButton extends StatelessWidget {
   const BookDetailsButton({super.key, required this.url});
-  final String? url;
+  final String url;
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        if (url == null) {
-          showModalBottomSheet(
-            context: context,
-            builder: (context) {
-              return Container(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height/2,
-                // padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height/2 - 50),
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: kPrimaryColor,
-                ),
-                child: Text(
-                  "Preview isn't available",
-                  style: Styles.textStyyle20.copyWith(color: Colors.white),
-                ),
-              );
-            },
-          );
-        }else{
-          
-        }
+        customLaunchUrl(url: url);
       },
       child: Container(
         width: MediaQuery.of(context).size.width * 0.8,

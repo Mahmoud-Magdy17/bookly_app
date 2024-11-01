@@ -17,7 +17,6 @@ class BookDetailsView extends StatefulWidget {
 
 class _BookDetailsViewState extends State<BookDetailsView> {
   @override
-
   Widget build(BuildContext context) {
     final BookModel arg =
         ModalRoute.of(context)?.settings.arguments as BookModel;
@@ -27,12 +26,17 @@ class _BookDetailsViewState extends State<BookDetailsView> {
     return Scaffold(
       appBar: const BookDetailsAppBar(),
       body: BookDetailsViewBody(
-          bookDetails: VolumeInfo(
-        title: arg.volumeInfo.title,
-        authors: arg.volumeInfo.authors,
-        bookRating: BookRatingModel(averageRating: 3, retingCount: 2),
-        imageLinks: arg.volumeInfo.imageLinks,
-      )),
+        bookDetails: VolumeInfo(
+          previewLink: arg.volumeInfo.previewLink,
+          title: arg.volumeInfo.title,
+          authors: arg.volumeInfo.authors,
+          bookRating: BookRatingModel(
+            averageRating: 3,
+            retingCount: 2,
+          ),
+          imageLinks: arg.volumeInfo.imageLinks,
+        ),
+      ),
     );
   }
 }

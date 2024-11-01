@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bookly_app/core/widgets/custom_error_message.dart';
 import 'package:bookly_app/core/widgets/custom_progress_indecator.dart';
 import 'package:bookly_app/features/home/presentation/manger/related_books_cubit/related_books_cubit.dart';
@@ -13,7 +11,6 @@ class CustomRelatedListView extends StatelessWidget {
   final double scale;
   @override
   Widget build(BuildContext context) {
-    log("CustomRelatedListView");
     return BlocBuilder<RelatedBooksCubit, RelatedBooksState>(
       builder: (context, state) {
         if (state is RelatedBooksSuccess) {
