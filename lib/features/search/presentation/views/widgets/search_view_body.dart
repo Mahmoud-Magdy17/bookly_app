@@ -12,7 +12,6 @@ class SearchViewBody extends StatefulWidget {
 }
 
 class _SearchViewBodyState extends State<SearchViewBody> {
-  
   @override
   Widget build(BuildContext context) {
     return const Padding(
@@ -31,9 +30,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
             child: Text("Search Result", style: Styles.textStyle18),
           ),
           Expanded(
-            child: SearchListView(
-              books: [],
-            ),
+            child: SearchListView(),
           ),
         ],
       ),

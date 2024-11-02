@@ -38,11 +38,7 @@ class HomeRepoImpl implements HomeRepo {
       var jSonData = await apiServices.get(endPoint);
       List<BookModel> books = [];
       for (var book in jSonData["items"]) {
-        try {
-          books.add(BookModel.fromJson(book));
-        } catch (e) {
-          books.add(BookModel.fromJson(book));
-        }
+        books.add(BookModel.fromJson(book));
       }
       return right(books);
     } catch (e) {
@@ -63,11 +59,7 @@ class HomeRepoImpl implements HomeRepo {
       var jSonData = await apiServices.get(endPoint);
       List<BookModel> books = [];
       for (var book in jSonData["items"]) {
-        try {
-          books.add(BookModel.fromJson(book));
-        } catch (e) {
-          books.add(BookModel.fromJson(book));
-        }
+        books.add(BookModel.fromJson(book));
       }
       return right(books);
     } catch (e) {

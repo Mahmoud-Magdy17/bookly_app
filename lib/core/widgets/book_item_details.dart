@@ -29,7 +29,9 @@ class BookItemDetails extends StatelessWidget {
             ),
           ),
           Text(
-            bookInfo.authors?[0]??"Auther",
+            bookInfo.authors == null
+                ? "Auther"
+                : (bookInfo.authors!.isEmpty ? "Auther" : bookInfo.authors![0]),
             style: Styles.textStyle14,
           ),
           const Spacer(),
